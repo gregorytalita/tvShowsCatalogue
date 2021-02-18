@@ -3,6 +3,6 @@ import styled from 'styled-components'
 export const MoviesContainer = styled.div `{
   display: flex;
   overflow-x: scroll;
-  width: 100%;
-  padding: 20px 0;
+  width: calc(100% - ${({ theme }) => `${theme.spacing(2)}px`});
+  padding: ${({ theme }) => `${theme.spacing(3)}px 0`};
 }`

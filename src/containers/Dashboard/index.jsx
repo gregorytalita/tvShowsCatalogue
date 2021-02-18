@@ -8,7 +8,7 @@ const Dashboard = () => {
   return (
 
     <>
-      <MovieRow movies={[Thumbnail,Thumbnail,Thumbnail,Thumbnail,Thumbnail,Thumbnail,Thumbnail,Thumbnail,Thumbnail,Thumbnail]} />
+      <MovieRow label='Action' movies={[Thumbnail,Thumbnail,Thumbnail,Thumbnail,Thumbnail,Thumbnail,Thumbnail,Thumbnail,Thumbnail,Thumbnail]} />
     </>
 
   )

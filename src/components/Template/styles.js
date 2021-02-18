@@ -6,9 +6,9 @@ export const TemplateWrapper = styled.div`
 
 export const Content = styled.main`
   width: 100%;
-  max-width: 100%;
+  max-width: calc(100vw - ${({ theme }) => `${theme.spacing(6)}px`});
   min-height: 100vh;
-  padding: ${({ theme }) => `${theme.spacing(8)}px ${theme.spacing(3)}px`};
+  padding: ${({ theme }) => `${theme.spacing(10)}px ${theme.spacing(3)}px`};
   flex: 1 1 100%;
   position: relative;
 `
