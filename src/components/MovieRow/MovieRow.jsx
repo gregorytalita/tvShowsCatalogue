@@ -31,16 +31,15 @@ const MovieRow = ({ movies, label }) => {
   return (
 
     <>
-      <Typography variant='h2'>{label}</Typography>
+      <Typography variant='h4'>{label}</Typography>
       <MoviesContainer {...bind()}>
         {
-          movies.length && movies.map((src, i) => (
+          movies.length && movies.map(({ src, onClick }, i) => (
             <MovieCard
               key={`${src}-${i}`}
-              style={{
-                ...style,
-                backgroundImage: `url(${src})`
-              }}
+              thumbnail={src}
+              style={style}
+              onClick={onClick}
             />
           ))
         }

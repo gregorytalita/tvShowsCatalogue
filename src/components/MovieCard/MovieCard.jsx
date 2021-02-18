@@ -1,12 +1,23 @@
 import React from 'react'
-import { Card } from './styles'
+import { CardActionArea, Typography } from '@material-ui/core';
+import { Card, CardMedia, CardContent } from './styles'
+import { animated } from "react-spring";
 
-const MovieCard = ({ style }) => {
+const MovieCard = ({ style, thumbnail, onClick }) => {
 
   return (
-    <Card
-      style={{...style}}
-    />
+    <animated.div style={{...style}}>
+      <Card onClick={onClick}>
+        <CardActionArea>
+          <CardMedia image={thumbnail} />
+          <CardContent>
+            <Typography gutterBottom variant="h5" color='textPrimary'>
+              Movie Title
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </animated.div>
   )
 }
 
