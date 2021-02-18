@@ -1,3 +1,5 @@
 export { default as AppBar } from './AppBar'
+export { default as MovieCard } from './MovieCard'
+export { default as MovieRow } from './MovieRow'
 export { default as TemplateRoute } from './Routing/TemplateRoute'
 export { default as PageRoute } from './Routing/PageRoute'
