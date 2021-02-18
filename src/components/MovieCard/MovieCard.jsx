@@ -3,16 +3,16 @@ import { CardActionArea, Typography } from '@material-ui/core';
 import { Card, CardMedia, CardContent } from './styles'
 import { animated } from "react-spring";
 
-const MovieCard = ({ style, thumbnail, onClick }) => {
+const MovieCard = ({ image, style, name, onClick }) => {
 
   return (
     <animated.div style={{...style}}>
       <Card onClick={onClick}>
         <CardActionArea>
-          <CardMedia image={thumbnail} />
+          <CardMedia image={image.medium} />
           <CardContent>
-            <Typography gutterBottom variant="h5" color='textPrimary'>
-              Movie Title
+            <Typography gutterBottom variant="h5">
+              {name}
             </Typography>
           </CardContent>
         </CardActionArea>

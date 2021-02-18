@@ -14,7 +14,7 @@ const clamp = (value, clampAt = 30) => {
   }
 };
 
-const MovieRow = ({ movies, label }) => {
+const MovieRow = ({ movies, label, onClickMovieCard }) => {
 
   const [style, set] = useSpring(() => ({
     transform: "perspective(500px) rotateY(0deg)"
@@ -34,12 +34,12 @@ const MovieRow = ({ movies, label }) => {
       <Typography variant='h4'>{label}</Typography>
       <MoviesContainer {...bind()}>
         {
-          movies.length && movies.map(({ src, onClick }, i) => (
+          movies.length && movies.map((movie, i) => (
             <MovieCard
-              key={`${src}-${i}`}
-              thumbnail={src}
+              key={`${movie.id}-${i}`}
               style={style}
-              onClick={onClick}
+              onClick={() => onClickMovieCard(movie)}
+              {...movie}
             />
           ))
         }

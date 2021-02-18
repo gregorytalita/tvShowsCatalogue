@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Switch, Redirect } from 'react-router-dom'
 import { TemplateRoute } from '../../components'
 import * as routes from '../../core/constants/routes'
 
