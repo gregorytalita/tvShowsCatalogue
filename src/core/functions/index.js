@@ -19,3 +19,5 @@ export const formatMoviesIntoGenres = movies => movies.reduce((acc = {}, curr) =
   }), {})
 
 }, {})
+
+export const removeHTML = (text = '') => text.replace( /(<([^>]+)>)/ig, '')

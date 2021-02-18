@@ -2,7 +2,7 @@ import { lightBlue, grey, indigo } from '@material-ui/core/colors';
 
 const palette = {
   primary: {
-    main: lightBlue[500],
+    main: lightBlue[900],
     contrastText: grey[50]
   },
   secondary: {

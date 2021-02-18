@@ -5,7 +5,7 @@ const DetailsDrawer = ({ open, onClose, onOpen, children }) => {
 
   return (
     <SwipeableDrawer
-      anchor='bottom'
+      anchor='right'
       open={open}
       onOpen={onOpen}
       onClose={onClose}

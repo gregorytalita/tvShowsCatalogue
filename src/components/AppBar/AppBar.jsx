@@ -112,7 +112,7 @@ const AppBar = ({ menuItems = [] }) => {
           </Box>
         </Toolbar>
       </MuiAppBar>
-
+      {renderMenu}
     </>
   );
 }

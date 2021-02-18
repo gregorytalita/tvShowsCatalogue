@@ -2,7 +2,7 @@ import React from 'react'
 import { useSpring } from "react-spring"
 import { useScroll } from "react-use-gesture"
 
-import { Typography } from '@material-ui/core'
+import { Typography, Box } from '@material-ui/core'
 import { MovieCard } from '../'
 import { MoviesContainer } from './styles'
 
@@ -31,7 +31,9 @@ const MovieRow = ({ movies, label, onClickMovieCard }) => {
   return (
 
     <>
-      <Typography variant='h4'>{label}</Typography>
+      <Box borderBottom={1} py={2} borderColor="primary.main">
+        <Typography variant='h4'>{label}</Typography>
+      </Box>
       <MoviesContainer {...bind()}>
         {
           movies.length && movies.map((movie, i) => (
