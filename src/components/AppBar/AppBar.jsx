@@ -4,7 +4,7 @@ import {
   Toolbar,
   IconButton,
   Typography,
-  Input,
+  OutlinedInput,
   MenuItem,
   Menu,
   Button,
@@ -55,9 +55,17 @@ const AppBar = ({ menuItems = [] }) => {
 
   return (
     <>
+
       <MuiAppBar position="fixed">
         <Toolbar>
-          <Box display='flex' justifyContent='space-between' alignItems='center' width='100%'>
+          <Box
+            display='flex'
+            justifyContent='space-between'
+            alignItems='center'
+            width='100%'
+            py={2}
+          >
+
             <Hidden smDown>
               <Typography variant="h6" noWrap>
                 My catalog
@@ -65,9 +73,9 @@ const AppBar = ({ menuItems = [] }) => {
             </Hidden>
 
             <Box width='50%'>
-              <Input
-                variant='filled'
-                startAdornment={<SearchIcon />}
+              <OutlinedInput
+                color='secondary'
+                startAdornment={<SearchIcon color='secondary' />}
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }}
                 fullWidth
@@ -104,7 +112,7 @@ const AppBar = ({ menuItems = [] }) => {
           </Box>
         </Toolbar>
       </MuiAppBar>
-      {renderMenu}
+
     </>
   );
 }
