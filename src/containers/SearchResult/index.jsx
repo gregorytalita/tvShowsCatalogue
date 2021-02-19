@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { MovieCard, DetailsDrawer, DetailsTemplate } from '../../components'
-import { Box, Typography } from '@material-ui/core'
+import { Box, Typography, Grow } from '@material-ui/core'
+import { calculateGrowTimeout } from '../../core/functions'
 
 const SearchResult = ({ location }) => {
+
   const [movieDetail, handleMovieDetails] = useState()
 
   const handleMovieClick = movieProperties => handleMovieDetails(movieProperties)
-
   const handleDetailsDrawerClose = () => handleMovieDetails()
 
   const { shows = [], search } = location.state
@@ -22,13 +23,15 @@ const SearchResult = ({ location }) => {
       </Box>
       <Box display='flex' flexWrap='wrap' marginY={2}>
         {
-          shows.length && shows.map(({ show }) => (
-            <Box marginRight='8px' marginBottom={2} key={show.id}>
-              <MovieCard
-                onClick={() => handleMovieClick(show)}
-                {...show}
-              />
-            </Box>
+          shows.length && shows.map(({ show }, index) => (
+            <Grow in={true} timeout={calculateGrowTimeout(index)} key={show.id}>
+              <Box marginRight='8px' marginBottom={2}>
+                <MovieCard
+                  onClick={() => handleMovieClick(show)}
+                  {...show}
+                />
+              </Box>
+            </Grow>
           ))
         }
       </Box>

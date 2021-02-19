@@ -19,3 +19,5 @@ export const formatIntoGenres = (movies = []) => movies.reduce((acc = {}, curr) 
 }, {})
 
 export const removeHTML = (text = '') => text?.replace(/(<([^>]+)>)/ig, '')
+
+export const calculateGrowTimeout = time => 1000 + (time * 1000)
