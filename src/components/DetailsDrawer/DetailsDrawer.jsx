@@ -1,8 +1,7 @@
-import React from 'react';
+import React from 'react'
 import { SwipeableDrawer } from '@material-ui/core'
 
 const DetailsDrawer = ({ open, onClose, onOpen, children }) => {
-
   return (
     <SwipeableDrawer
       anchor='right'
@@ -12,7 +11,7 @@ const DetailsDrawer = ({ open, onClose, onOpen, children }) => {
     >
       {children}
     </SwipeableDrawer>
-  );
+  )
 }
 
 export default DetailsDrawer

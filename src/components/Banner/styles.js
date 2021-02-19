@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledBanner = styled.div `{
+export const StyledBanner = styled.div`{
   width: 100%;
   height: 50%;
   background: url(${({ url }) => url});

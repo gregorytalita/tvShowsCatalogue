@@ -1,4 +1,4 @@
-import { lightBlue, grey, indigo } from '@material-ui/core/colors';
+import { lightBlue, grey, indigo } from '@material-ui/core/colors'
 
 const palette = {
   primary: {

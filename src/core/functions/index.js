@@ -1,10 +1,9 @@
 export const formatIntoGenres = (movies = []) => movies.reduce((acc = {}, curr) => {
-
-  if(!curr.genres.length) {
+  if (!curr.genres.length) {
     return {
       ...acc,
-      'Unknown': [
-        ...acc['Unknown']?.length ? acc['Unknown'] : [],
+      Unknown: [
+        ...acc.Unknown?.length ? acc.Unknown : [],
         curr
       ]
     }
@@ -17,7 +16,6 @@ export const formatIntoGenres = (movies = []) => movies.reduce((acc = {}, curr) 
       curr
     ]
   }), {})
-
 }, {})
 
-export const removeHTML = (text = '') => text?.replace( /(<([^>]+)>)/ig, '')
+export const removeHTML = (text = '') => text?.replace(/(<([^>]+)>)/ig, '')

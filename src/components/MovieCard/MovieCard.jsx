@@ -1,14 +1,13 @@
 import React from 'react'
-import { animated } from "react-spring";
-import { CardActionArea, Typography, Box, Hidden } from '@material-ui/core';
-import StarsIcon from '@material-ui/icons/Stars';
+import { animated } from 'react-spring'
+import { CardActionArea, Typography, Box, Hidden } from '@material-ui/core'
+import StarsIcon from '@material-ui/icons/Stars'
 import { Card, CardMedia, CardContent, CardOverlay, RatingWrapper } from './styles'
 import MovieCardPlaceholder from './movieCardPlaceholder.png'
 
 const MovieCard = ({ image, style, name, rating, onClick }) => {
-
   return (
-    <animated.div style={{...style}}>
+    <animated.div style={{ ...style }}>
       <Card onClick={onClick}>
         <CardActionArea>
           <CardMedia image={image?.medium || MovieCardPlaceholder} />
@@ -29,7 +28,7 @@ const MovieCard = ({ image, style, name, rating, onClick }) => {
                   justifyContent='space-between'
                 >
                   <StarsIcon />
-                  <Typography gutterBottom variant="body1">
+                  <Typography gutterBottom variant='body1'>
                     {rating.average}
                   </Typography>
                 </RatingWrapper>

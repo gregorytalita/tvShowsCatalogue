@@ -1,12 +1,11 @@
-import React, { useState }  from 'react'
+import React, { useState } from 'react'
 
 import { MovieRow, DetailsDrawer, DetailsTemplate } from '../../components'
 import { useTVShowsContext } from '../../contexts/TVShowsContext'
 
 const Dashboard = () => {
-
   const { showsByGenre } = useTVShowsContext()
-  const [ movieDetail, handleMovieDetails] = useState()
+  const [movieDetail, handleMovieDetails] = useState()
 
   const handleMovieClick = movieProperties => handleMovieDetails(movieProperties)
 

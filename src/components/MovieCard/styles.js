@@ -4,9 +4,9 @@ import {
   CardMedia as MuiCardMedia,
   CardContent as MuiCardContent,
   Box
-} from '@material-ui/core';
+} from '@material-ui/core'
 
-export const Card = styled(MuiCard) `{
+export const Card = styled(MuiCard)`{
   width: 300px;
   height: 200px;
   background: transparent;
@@ -19,7 +19,7 @@ export const Card = styled(MuiCard) `{
   }
 }`
 
-export const CardMedia = styled(MuiCardMedia) `{
+export const CardMedia = styled(MuiCardMedia)`{
   width: 300px;
   height: 200px;
   position: absolute;
@@ -31,7 +31,7 @@ export const CardMedia = styled(MuiCardMedia) `{
   }
 }`
 
-export const CardContent = styled(MuiCardContent) `{
+export const CardContent = styled(MuiCardContent)`{
   width: 268px;
   height: 169px;
   position: relative;
@@ -56,7 +56,6 @@ export const CardOverlay = styled.div`
 
 export const RatingWrapper = styled(Box)`
   color: ${({ theme, rating }) => {
-
     if (rating >= 8) {
       return theme.palette.success.main
     }
@@ -68,6 +67,5 @@ export const RatingWrapper = styled(Box)`
     if (rating <= 6) {
       return theme.palette.error.main
     }
-
   }};
 `

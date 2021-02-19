@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import {
   AppBar as MuiAppBar,
   Toolbar,
@@ -7,23 +7,20 @@ import {
   OutlinedInput,
   Hidden,
   Box
-} from '@material-ui/core';
+} from '@material-ui/core'
 
-import { Search as SearchIcon, Clear as ClearIcon } from '@material-ui/icons';
+import { Search as SearchIcon, Clear as ClearIcon } from '@material-ui/icons'
 
 const AppBar = ({ onClickSearch, history }) => {
-
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState('')
 
   const handleKeyUp = () => {
-
     if (search.length) {
       setSearch(search)
       onClickSearch(search)
     } else {
       handleOnClickClear()
     }
-
   }
 
   const handleOnClickClear = () => {
@@ -32,19 +29,17 @@ const AppBar = ({ onClickSearch, history }) => {
   }
 
   const getEndAdornment = () => {
-
-    if(search.length) {
+    if (search.length) {
       return (
         <IconButton onClick={() => handleOnClickClear()}>
           <ClearIcon color='secondary' />
         </IconButton>
       )
     }
-
   }
 
   return (
-    <MuiAppBar position="fixed">
+    <MuiAppBar position='fixed'>
       <Toolbar>
         <Box
           display='flex'
@@ -55,7 +50,7 @@ const AppBar = ({ onClickSearch, history }) => {
         >
 
           <Hidden smDown>
-            <Typography variant="h6" noWrap>
+            <Typography variant='h6' noWrap>
               My catalog
             </Typography>
           </Hidden>
@@ -66,7 +61,7 @@ const AppBar = ({ onClickSearch, history }) => {
               color='secondary'
               startAdornment={<SearchIcon color='secondary' />}
               endAdornment={getEndAdornment()}
-              placeholder="Search…"
+              placeholder='Search…'
               inputProps={{ 'aria-label': 'search' }}
               fullWidth
               onChange={({ target }) => setSearch(target.value)}
@@ -77,7 +72,7 @@ const AppBar = ({ onClickSearch, history }) => {
         </Box>
       </Toolbar>
     </MuiAppBar>
-  );
+  )
 }
 
 export default AppBar

@@ -5,7 +5,6 @@ import { removeHTML } from '../../core/functions'
 import { ContentWrapper } from './styles'
 
 const DetailsTemplate = ({ image, name, genres = [], summary }) => {
-
   return (
     <ContentWrapper width='50vw' height='100%' paddingX={6} paddingY={8} position='relative'>
 
@@ -20,7 +19,7 @@ const DetailsTemplate = ({ image, name, genres = [], summary }) => {
         <Box maxWidth='75%' display='flex' justifyContent='space-between' my={2} flexWrap='wrap'>
           {
             genres.length && genres.map(genre => (
-              <Chip variant="outlined" color="secondary" label={genre} key={genre} />
+              <Chip variant='outlined' color='secondary' label={genre} key={genre} />
             ))
           }
         </Box>
