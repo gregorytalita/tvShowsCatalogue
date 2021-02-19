@@ -12,14 +12,14 @@ const ShowCard = ({ image, style, name, rating, onClick }) => {
         <CardActionArea onClick={onClick}>
 
           <CardContent>
-            <Box display='flex' justifyContent='space-between' alignItems='center'>
+            <Box width='100%' display='flex' justifyContent='space-between' alignItems='center'>
 
               <Typography gutterBottom variant='h3'>
                 {name}
               </Typography>
 
               <Hidden smDown>
-                <Rate value={rating.average} />
+                {rating.average && <Rate value={rating.average} />}
               </Hidden>
 
             </Box>

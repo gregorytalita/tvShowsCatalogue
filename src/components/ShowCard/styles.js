@@ -32,6 +32,8 @@ export const CardContent = styled(MuiCardContent)`{
   width: calc(100% - ${({ theme }) => `${theme.spacing(4)}px`});
   height: calc(100% - ${({ theme }) => `${theme.spacing(4)}px`});
   background: ${({ theme }) => theme.palette.grey[900]}a8;
-  color: ${({ theme }) => theme.palette.common.white};
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }`
 
