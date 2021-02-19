@@ -1,4 +1,4 @@
-export const formatMoviesIntoGenres = movies => movies.reduce((acc = {}, curr) => {
+export const formatIntoGenres = (movies = []) => movies.reduce((acc = {}, curr) => {
 
   if(!curr.genres.length) {
     return {

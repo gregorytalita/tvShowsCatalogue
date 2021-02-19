@@ -1,19 +1,12 @@
-import React, { useEffect, useState }  from 'react'
+import React, { useState }  from 'react'
 
 import { MovieRow, DetailsDrawer, DetailsTemplate } from '../../components'
-import { getShows } from '../../core/api/shows'
-import { formatMoviesIntoGenres } from '../../core/functions'
+import { useTVShowsContext } from '../../contexts/TVShowsContext'
 
 const Dashboard = () => {
 
-  const [ movies, handleMovies ] = useState({})
+  const { showsByGenre } = useTVShowsContext()
   const [ movieDetail, handleMovieDetails] = useState()
-
-  useEffect(() => {
-    getShows()
-      .then(formatMoviesIntoGenres)
-      .then(handleMovies)
-  }, [])
 
   const handleMovieClick = movieProperties => handleMovieDetails(movieProperties)
 
@@ -23,11 +16,11 @@ const Dashboard = () => {
 
     <>
       {
-        Object.keys(movies).sort().map(genres => (
+        Object.keys(showsByGenre).sort().map(genres => (
           <MovieRow
             key={genres}
             label={genres}
-            movies={movies[genres].sort((a, b) => b.rating.average - a.rating.average)}
+            movies={showsByGenre[genres].sort((a, b) => b.rating.average - a.rating.average)}
             onClickMovieCard={handleMovieClick}
           />
         ))
