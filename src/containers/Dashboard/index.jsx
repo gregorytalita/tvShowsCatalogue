@@ -23,11 +23,11 @@ const Dashboard = () => {
 
     <>
       {
-        Object.keys(movies).map(genres => (
+        Object.keys(movies).sort().map(genres => (
           <MovieRow
             key={genres}
             label={genres}
-            movies={movies[genres]}
+            movies={movies[genres].sort((a, b) => b.rating.average - a.rating.average)}
             onClickMovieCard={handleMovieClick}
           />
         ))
