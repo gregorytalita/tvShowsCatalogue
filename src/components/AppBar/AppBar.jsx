@@ -15,19 +15,37 @@ import {
 import SearchIcon from '@material-ui/icons/Search';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
-const AppBar = ({ menuItems = [] }) => {
+const AppBar = ({ menuItems = [], onClickSearch }) => {
 
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl, handleAnchorEl] = useState(null);
+  const [search, handleSearch] = useState('');
 
   const isMenuOpen = Boolean(anchorEl);
 
   const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
+    handleAnchorEl(event.currentTarget);
   };
 
   const handleMenuClose = () => {
-    setAnchorEl(null);
+    handleAnchorEl(null);
   };
+
+  const handleSearchField = ({ code }) => {
+
+    if (code === "Enter") {
+      handleOnClickSearch()
+    }
+
+  }
+
+  const handleOnClickSearch = () => {
+
+    if (search.length) {
+      onClickSearch(search)
+      handleSearch('')
+    }
+
+  }
 
 
   const menuId = 'primary-search-account-menu';
@@ -74,11 +92,18 @@ const AppBar = ({ menuItems = [] }) => {
 
             <Box width='50%'>
               <OutlinedInput
+                value={search}
                 color='secondary'
-                startAdornment={<SearchIcon color='secondary' />}
+                endAdornment={
+                  <IconButton onClick={() => handleOnClickSearch()}>
+                    <SearchIcon color='secondary' />
+                  </IconButton>
+                }
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }}
                 fullWidth
+                onChange={({ target }) => handleSearch(target.value)}
+                onKeyUp={handleSearchField}
               />
             </Box>
 

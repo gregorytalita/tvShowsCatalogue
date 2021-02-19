@@ -1,8 +1,9 @@
 import React from 'react'
-import { CardActionArea, Typography, Box, Hidden } from '@material-ui/core';
 import { animated } from "react-spring";
+import { CardActionArea, Typography, Box, Hidden } from '@material-ui/core';
 import StarsIcon from '@material-ui/icons/Stars';
 import { Card, CardMedia, CardContent, CardOverlay, RatingWrapper } from './styles'
+import MovieCardPlaceholder from './movieCardPlaceholder.png'
 
 const MovieCard = ({ image, style, name, rating, onClick }) => {
 
@@ -10,7 +11,7 @@ const MovieCard = ({ image, style, name, rating, onClick }) => {
     <animated.div style={{...style}}>
       <Card onClick={onClick}>
         <CardActionArea>
-          <CardMedia image={image.medium} />
+          <CardMedia image={image?.medium || MovieCardPlaceholder} />
           <CardContent>
             <CardOverlay />
             <Box display='flex' justifyContent='space-between' alignItems='center'>

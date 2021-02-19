@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 
-export const TemplateWrapper = styled.div`
-  display: flex;
-`
-
-export const Content = styled.main`
+export const ContentWrapper = styled.main`
   width: 100%;
   max-width: calc(100vw - ${({ theme }) => `${theme.spacing(6)}px`});
   min-height: 100vh;

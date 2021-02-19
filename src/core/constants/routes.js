@@ -1,5 +1,6 @@
 const ROOT = ''
 const DASHBOARD = `${ROOT}/dashboard`
+const SEARCH = `${ROOT}/search`
 
 /**
  * NOT PRIVATE ROUTES
@@ -7,5 +8,6 @@ const DASHBOARD = `${ROOT}/dashboard`
 
 export const NOT_PRIVATE = {
   ROOT,
-  DASHBOARD
+  DASHBOARD,
+  SEARCH
 }

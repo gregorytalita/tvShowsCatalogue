@@ -1,23 +1,16 @@
-import React, { useMemo } from 'react'
-
-import {
-  Content,
-  TemplateWrapper
-} from './styles'
-
+import React from 'react'
+import { ContentWrapper } from './styles'
 import AppBar from '../AppBar'
 
-const Template = ({ children, contentMenu: ContentMenu, sidebarMenuItems, history }) => {
-
-  const withContentMenu = useMemo(() => !!ContentMenu, [ContentMenu])
+const Template = ({ children, onClickSearch, history }) => {
 
   return (
-    <TemplateWrapper>
-      <AppBar history={history} />
-      <Content withMenu={withContentMenu}>
+    <>
+      <AppBar history={history} onClickSearch={onClickSearch} />
+      <ContentWrapper>
         {children}
-      </Content>
-    </TemplateWrapper>
+      </ContentWrapper>
+    </>
   )
 }
 

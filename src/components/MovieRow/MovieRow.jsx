@@ -31,7 +31,7 @@ const MovieRow = ({ movies, label, onClickMovieCard }) => {
   return (
 
     <>
-      <Box borderBottom={1} py={2} borderColor="primary.main">
+      <Box borderBottom={1} paddingY={2} borderColor="primary.main">
         <Typography variant='h4'>{label}</Typography>
       </Box>
       <MoviesContainer {...bind()}>

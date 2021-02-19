@@ -2,12 +2,15 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import Template from '../../Template'
 
-const TemplateRoute = ({ component: Component, contentMenu: ContentMenuComponent, sideMenuItems, ...rest }) => {
+const TemplateRoute = ({ component: Component, onClickSearch, ...rest }) => {
   return (
     <Route
       {...rest}
       render={({ history, ...props }) => (
-        <Template history={history} sideMenuItems={sideMenuItems} contentMenu={ContentMenuComponent && (() => <ContentMenuComponent {...props} history={history} />)}>
+        <Template
+          history={history}
+          onClickSearch={onClickSearch}
+        >
           <Component {...props} history={history} />
         </Template>
       )}
