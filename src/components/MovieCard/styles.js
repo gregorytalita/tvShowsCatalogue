@@ -10,12 +10,12 @@ export const Card = styled(MuiCard) `{
   width: 300px;
   height: 200px;
   background: transparent;
-  margin-right: ${({ theme }) => `${theme.spacing(4)}px`};
+  margin-right: ${({ theme }) => `${theme.spacing(2)}px`};
 
   ${({ theme }) => theme.breakpoints.down('sm')} {
     width: 200px;
     height: 150px;
-    margin-right: ${({ theme }) => `${theme.spacing(2)}px`};
+    margin-right: ${({ theme }) => `${theme.spacing(1)}px`};
   }
 }`
 
