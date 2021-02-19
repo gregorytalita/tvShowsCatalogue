@@ -1,14 +1,18 @@
 import styled from 'styled-components'
 
 export const StyledBanner = styled.div`{
+  max-width: 245px;
+  max-height: 300px;
   width: 100%;
-  height: 50%;
-  background: ${({ url }) => url ? `url(${url})` : 'linear-gradient(to right, #8e9eab, #eef2f3)'};
+  height: 100%;
+  background: url(${({ url }) => url });
   background-size: cover;
-  background-position: bottom center;
+  background-position: center;
   border-radius: 16px;
+  margin: ${({ theme }) => theme.spacing(2)}px;
 
   ${({ theme }) => theme.breakpoints.down('sm')} {
-    height: 25%;
+    max-width: 100%;
+    margin: 0;
   }
 }`

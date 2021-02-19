@@ -4,13 +4,10 @@ import { Box } from '@material-ui/core'
 export const ContentWrapper = styled(Box)`{
   display: flex;
   justify-content: space-between;
+  width: 50%;
+  max-width: 300px
 
   ${({ theme }) => theme.breakpoints.down('sm')} {
-    padding: ${({ theme, paddingY, paddingX }) => (
-      `${theme.spacing(paddingY) / 4}px ${theme.spacing(paddingX) / 4}px`
-    )};
-    width: 75vw;
-    flex-direction: column;
-    justify-content: flex-start;
+    width: 100%;
   }
 }`
