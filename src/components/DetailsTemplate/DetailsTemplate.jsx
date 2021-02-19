@@ -24,7 +24,7 @@ const DetailsTemplate = ({ image, name, genres = [], summary }) => {
         <GenreChips genres={genres} />
 
         <Box paddingY={2}>
-          <Typography paragraph>
+          <Typography paragraph variant='body1'>
             {removeHTML(summary)}
           </Typography>
         </Box>

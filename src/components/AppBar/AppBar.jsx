@@ -58,7 +58,7 @@ const AppBar = ({ onKeyUpSearch, history, redirectRoute = '/' }) => {
 
           <Hidden smDown>
             <Button startIcon={<LiveTvIcon />} color='inherit' onClick={handleRedirect}>
-              <Typography variant='h6' noWrap>
+              <Typography variant='h1' noWrap>
                 My TV catalog
               </Typography>
             </Button>

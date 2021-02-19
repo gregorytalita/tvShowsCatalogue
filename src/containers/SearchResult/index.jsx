@@ -17,8 +17,8 @@ const SearchResult = ({ location }) => {
 
     <>
       <Box borderBottom={1} paddingY={2} borderColor='primary.main'>
-        <Typography variant='h4'>
-          <b>Result for</b> "{search}"
+        <Typography variant='h2'>
+          Result for"<b>{search}</b>"
         </Typography>
       </Box>
       <Box display='flex' flexWrap='wrap' justifyContent='space-around' marginY={2}>

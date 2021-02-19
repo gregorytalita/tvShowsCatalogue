@@ -14,7 +14,7 @@ const Rate = ({ value }) => {
       justifyContent='space-between'
     >
       <StarsIcon />
-      <Typography gutterBottom variant='body1'>
+      <Typography gutterBottom variant='overline'>
         {value}
       </Typography>
     </RatingWrapper>

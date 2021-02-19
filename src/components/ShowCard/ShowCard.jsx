@@ -14,8 +14,8 @@ const ShowCard = ({ image, style, name, rating, onClick }) => {
           <CardContent>
             <Box display='flex' justifyContent='space-between' alignItems='center'>
 
-              <Typography gutterBottom variant='h6' component='h2'>
-                <b>{name}</b>
+              <Typography gutterBottom variant='h3'>
+                {name}
               </Typography>
 
               <Hidden smDown>

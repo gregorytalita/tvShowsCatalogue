@@ -1,5 +1,5 @@
-// export { default as typography } from './typography'
 import * as overrides from './overrides'
+export { default as typography } from './typography'
 
 export { default as palette } from './palette'
 
