@@ -1,6 +1,10 @@
 import styled, { keyframes } from 'styled-components'
 
 const fadeOut = keyframes`
+  0% {
+    opacity: 1;
+    display: initial;
+  }
   90% {
     opacity: 0;
   }
@@ -16,10 +20,8 @@ export const LoaderOverlayWrapper = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  animation: 1s ${({ isLoading }) => isLoading ? '' : fadeOut} ease-out both;
+  animation: 1s ${({ enabled }) => enabled ? '' : fadeOut} ease-out both;
   z-index: 1600;
-  top: 0;
-  left: auto;
-  right: 0;
-  position: fixed;
+  display: none;
+  opacity: 0;
 `

@@ -41,23 +41,24 @@ const App = ({ history }) => {
   }
 
   return (
-
-    <TVShowsContext.Provider value={{ showsByGenre: tvShows }}>
-      <Switch>
-        <TemplateRoute
-          path={routes.NOT_PRIVATE.DASHBOARD}
-          component={Dashboard}
-          onClickSearch={onClickSearch}
-        />
-        <TemplateRoute
-          path={routes.NOT_PRIVATE.SEARCH}
-          component={SearchResult}
-          onClickSearch={onClickSearch}
-        />
-        <Redirect from='*' to={routes.NOT_PRIVATE.DASHBOARD} />
-      </Switch>
-    </TVShowsContext.Provider>
-
+    <>
+      {/* <LoaderOverlay enabled={loading}/> */}
+      <TVShowsContext.Provider value={{ showsByGenre: tvShows }}>
+        <Switch>
+          <TemplateRoute
+            path={routes.NOT_PRIVATE.DASHBOARD}
+            component={Dashboard}
+            onClickSearch={onClickSearch}
+          />
+          <TemplateRoute
+            path={routes.NOT_PRIVATE.SEARCH}
+            component={SearchResult}
+            onClickSearch={onClickSearch}
+          />
+          <Redirect from='*' to={routes.NOT_PRIVATE.DASHBOARD} />
+        </Switch>
+      </TVShowsContext.Provider>
+    </>
   )
 }
 

@@ -6,10 +6,15 @@ import {
   Typography,
   OutlinedInput,
   Hidden,
-  Box
+  Box,
+  Button
 } from '@material-ui/core'
 
-import { Search as SearchIcon, Clear as ClearIcon } from '@material-ui/icons'
+import {
+  Search as SearchIcon,
+  Clear as ClearIcon,
+  LiveTv as LiveTvIcon
+} from '@material-ui/icons'
 
 const AppBar = ({ onClickSearch, history }) => {
   const [search, setSearch] = useState('')
@@ -28,15 +33,13 @@ const AppBar = ({ onClickSearch, history }) => {
     history.push('/dashboard')
   }
 
-  const getEndAdornment = () => {
-    if (search.length) {
-      return (
-        <IconButton onClick={() => handleOnClickClear()}>
-          <ClearIcon color='secondary' />
-        </IconButton>
-      )
-    }
-  }
+  const endAdornmentButton = search.length
+  ? (
+    <IconButton onClick={() => handleOnClickClear()}>
+      <ClearIcon color='secondary' />
+    </IconButton>
+  )
+  : null
 
   return (
     <MuiAppBar position='fixed'>
@@ -50,17 +53,19 @@ const AppBar = ({ onClickSearch, history }) => {
         >
 
           <Hidden smDown>
-            <Typography variant='h6' noWrap>
-              My catalog
-            </Typography>
+            <Button startIcon={<LiveTvIcon />} color='inherit'>
+              <Typography variant='h6' noWrap>
+                My TV catalog
+              </Typography>
+            </Button>
           </Hidden>
 
-          <Box width='50%'>
+          <Box width='75%'>
             <OutlinedInput
               value={search}
               color='secondary'
               startAdornment={<SearchIcon color='secondary' />}
-              endAdornment={getEndAdornment()}
+              endAdornment={endAdornmentButton}
               placeholder='Search…'
               inputProps={{ 'aria-label': 'search' }}
               fullWidth

@@ -2,9 +2,9 @@ import React from 'react'
 import { CircularProgress } from '@material-ui/core'
 import { LoaderOverlayWrapper } from './styles'
 
-const LoaderOverlay = ({ isLoading }) => {
+const LoaderOverlay = ({ enabled }) => {
   return (
-    <LoaderOverlayWrapper isLoading={isLoading}>
+    <LoaderOverlayWrapper enabled={enabled}>
       <CircularProgress />
     </LoaderOverlayWrapper>
   )
