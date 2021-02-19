@@ -21,7 +21,7 @@ const App = ({ history }) => {
       .then(handleTVShows)
   }, [])
 
-  const onClickSearch = search => {
+  const onKeyUpSearch = search => {
 
     searchShows(search)
       .then(searchResult => {
@@ -30,7 +30,6 @@ const App = ({ history }) => {
           pathname: routes.NOT_PRIVATE.SEARCH,
           state: { search, shows: searchResult }
         })
-
 
       })
   }
@@ -41,12 +40,14 @@ const App = ({ history }) => {
         <TemplateRoute
           path={routes.NOT_PRIVATE.DASHBOARD}
           component={Dashboard}
-          onClickSearch={onClickSearch}
+          onKeyUpSearch={onKeyUpSearch}
+          redirectRoute={routes.NOT_PRIVATE.DASHBOARD}
         />
         <TemplateRoute
           path={routes.NOT_PRIVATE.SEARCH}
           component={SearchResult}
-          onClickSearch={onClickSearch}
+          onKeyUpSearch={onKeyUpSearch}
+          redirectRoute={routes.NOT_PRIVATE.DASHBOARD}
         />
         <Redirect from='*' to={routes.NOT_PRIVATE.DASHBOARD} />
       </Switch>

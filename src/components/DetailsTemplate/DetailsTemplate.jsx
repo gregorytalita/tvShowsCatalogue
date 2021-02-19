@@ -8,7 +8,7 @@ const DetailsTemplate = ({ image, name, genres = [], summary }) => {
   return (
     <ContentWrapper width='50vw' height='100%' paddingX={6} paddingY={8} position='relative'>
 
-      <Banner url={image.original} />
+      <Banner url={image?.original} />
 
       <Box my={2}>
 

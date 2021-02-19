@@ -16,21 +16,25 @@ import {
   LiveTv as LiveTvIcon
 } from '@material-ui/icons'
 
-const AppBar = ({ onClickSearch, history }) => {
+const AppBar = ({ onKeyUpSearch, history, redirectRoute = '/' }) => {
   const [search, setSearch] = useState('')
 
   const handleKeyUp = () => {
     if (search.length) {
       setSearch(search)
-      onClickSearch(search)
+      onKeyUpSearch(search)
     } else {
-      handleOnClickClear()
+      clearSearchAndRedirect()
     }
   }
 
-  const handleOnClickClear = () => {
+  const handleOnClickClear = () => clearSearchAndRedirect()
+
+  const handleRedirect = () => clearSearchAndRedirect()
+
+  const clearSearchAndRedirect = () => {
     setSearch('')
-    history.push('/dashboard')
+    history.push(redirectRoute)
   }
 
   const endAdornmentButton = search.length
@@ -53,7 +57,7 @@ const AppBar = ({ onClickSearch, history }) => {
         >
 
           <Hidden smDown>
-            <Button startIcon={<LiveTvIcon />} color='inherit'>
+            <Button startIcon={<LiveTvIcon />} color='inherit' onClick={handleRedirect}>
               <Typography variant='h6' noWrap>
                 My TV catalog
               </Typography>
