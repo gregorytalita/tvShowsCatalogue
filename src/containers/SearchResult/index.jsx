@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { MovieCard, DetailsDrawer, DetailsTemplate } from '../../components'
+import { ShowCard, DetailsDrawer, DetailsTemplate } from '../../components'
 import { Box, Typography, Grow } from '@material-ui/core'
 import { calculateGrowTimeout } from '../../core/functions'
 
@@ -21,12 +21,12 @@ const SearchResult = ({ location }) => {
           <b>Result for</b> "{search}"
         </Typography>
       </Box>
-      <Box display='flex' flexWrap='wrap' marginY={2}>
+      <Box display='flex' flexWrap='wrap' justifyContent='space-around' marginY={2}>
         {
           shows.length && shows.map(({ show }, index) => (
             <Grow in={true} timeout={calculateGrowTimeout(index)} key={show.id}>
               <Box marginRight='8px' marginBottom={2}>
-                <MovieCard
+                <ShowCard
                   onClick={() => handleMovieClick(show)}
                   {...show}
                 />

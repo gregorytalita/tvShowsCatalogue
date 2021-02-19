@@ -3,7 +3,7 @@ import { useSpring } from 'react-spring'
 import { useScroll } from 'react-use-gesture'
 
 import { Typography, Box } from '@material-ui/core'
-import { MovieCard } from '../'
+import { ShowCard } from '../'
 import { MoviesContainer } from './styles'
 
 const clamp = (value, clampAt = 30) => {
@@ -14,7 +14,7 @@ const clamp = (value, clampAt = 30) => {
   }
 }
 
-const MovieRow = ({ movies, label, onClickMovieCard }) => {
+const MovieRow = ({ movies, label, onClickShowCard }) => {
   const [style, set] = useSpring(() => ({
     transform: 'perspective(500px) rotateY(0deg)'
   }))
@@ -38,10 +38,10 @@ const MovieRow = ({ movies, label, onClickMovieCard }) => {
       <MoviesContainer {...bind()}>
         {
           movies.length && movies.map((movie, i) => (
-            <MovieCard
+            <ShowCard
               key={`${movie.id}-${i}`}
               style={style}
-              onClick={() => onClickMovieCard(movie)}
+              onClick={() => onClickShowCard(movie)}
               {...movie}
             />
           ))
