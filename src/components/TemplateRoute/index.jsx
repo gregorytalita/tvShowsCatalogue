@@ -2,7 +2,7 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-import Template from '../../Template'
+import Template from '../Template'
 
 const TemplateRoute = ({ component: Component, onKeyUpSearch, redirectRoute, ...rest }) => {
   return (
