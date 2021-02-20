@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { ShowCard, DetailsDrawer, DetailsTemplate } from '../../components'
 import { Box, Typography, Grow } from '@material-ui/core'
-import { calculateGrowTimeout } from '../../core/functions'
+import { transformSecondsToMilliseconds } from '../../core/functions'
 
 const SearchResult = ({ location }) => {
   const [showDetail, handleShowDetails] = useState()
@@ -23,7 +23,7 @@ const SearchResult = ({ location }) => {
       <Box display='flex' flexWrap='wrap' justifyContent='space-around' marginY={2}>
         {
           shows.length && shows.map(({ show }, index) => (
-            <Grow in timeout={calculateGrowTimeout(index)} key={show.id}>
+            <Grow in timeout={transformSecondsToMilliseconds(index)} key={show.id}>
               <Box marginRight='8px' marginBottom={2}>
                 <ShowCard
                   {...show}

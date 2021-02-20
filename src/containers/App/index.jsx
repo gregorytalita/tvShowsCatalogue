@@ -7,7 +7,7 @@ import * as routes from '../../core/constants/routes'
 
 import { searchShows } from '../../core/api/search'
 import { getShows } from '../../core/api/shows'
-import { formatIntoGenres } from '../../core/functions'
+import { transformIntoGenresObject } from '../../core/functions'
 
 import Dashboard from '../Dashboard'
 import SearchResult from '../SearchResult'
@@ -17,7 +17,7 @@ const App = ({ history }) => {
 
   useEffect(() => {
     getShows()
-      .then(formatIntoGenres)
+      .then(transformIntoGenresObject)
       .then(handleTVShows)
   }, [])
 

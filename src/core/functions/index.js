@@ -1,4 +1,4 @@
-export const formatIntoGenres = (shows = []) => shows.reduce((acc = {}, curr) => {
+export const transformIntoGenresObject = (shows = []) => shows.reduce((acc = {}, curr) => {
   if (!curr.genres.length) {
     return {
       ...acc,
@@ -10,14 +10,15 @@ export const formatIntoGenres = (shows = []) => shows.reduce((acc = {}, curr) =>
   }
 
   return curr.genres.reduce((showObj, genre) => ({
-    ...acc,
+    ...showObj,
     [genre]: [
-      ...acc[genre]?.length ? acc[genre] : [],
+      ...showObj[genre]?.length ? showObj[genre] : [],
       curr
     ]
-  }), {})
+  }), acc)
+
 }, {})
 
 export const removeHTML = (text = '') => text?.replace(/(<([^>]+)>)/ig, '')
 
-export const calculateGrowTimeout = time => 1000 + (time * 1000)
+export const transformSecondsToMilliseconds = time => time * 1000
