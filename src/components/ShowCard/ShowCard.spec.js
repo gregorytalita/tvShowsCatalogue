@@ -15,7 +15,7 @@ describe('ShowCard', () => {
     expect(getByText('Friends')).toBeInTheDocument()
   })
 
-  it('should be able to trigger the onOpen event', () => {
+  it('should be able to trigger the onClick event', () => {
 
     const onClick = jest.fn();
 

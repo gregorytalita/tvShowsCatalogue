@@ -20,7 +20,7 @@ const Dashboard = () => {
             key={genres}
             label={genres}
             shows={showsByGenre[genres].sort((a, b) => b.rating.average - a.rating.average)}
-            onClickShowCard={handleMovieClick}
+            onClickCard={handleMovieClick}
           />
         ))
       }

@@ -15,7 +15,7 @@ const clamp = (value, clampAt = 30) => {
   }
 }
 
-const CardsRow = ({ shows, label, onClickShowCard }) => {
+const CardsRow = ({ shows, label, onClickCard }) => {
   const [style, set] = useSpring(() => ({
     transform: 'perspective(500px) rotateY(0deg)'
   }))
@@ -45,7 +45,7 @@ const CardsRow = ({ shows, label, onClickShowCard }) => {
               rating={show.rating?.average}
               key={`${show.id}-${i}`}
               style={style}
-              onClick={() => onClickShowCard(show)}
+              onClick={() => onClickCard(show)}
             />
           ))
         }
@@ -58,11 +58,11 @@ const CardsRow = ({ shows, label, onClickShowCard }) => {
 CardsRow.prototype = {
   shows: PropTypes.array.isRequired,
   label: PropTypes.string,
-  onClickShowCard: PropTypes.func.isRequired
+  onClickCard: PropTypes.func.isRequired
 }
 
 CardsRow.defaultProps = {
-  label: 'Not Informed'
+  label: 'Not informed'
 }
 
 export default CardsRow
