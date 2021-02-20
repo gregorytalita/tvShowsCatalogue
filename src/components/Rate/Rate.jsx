@@ -5,9 +5,10 @@ import { Typography } from '@material-ui/core'
 import StarsIcon from '@material-ui/icons/Stars'
 import { RatingWrapper } from './styles'
 
-const Rate = ({ value }) => {
+const Rate = ({ value, ...rest }) => {
   return (
     <RatingWrapper
+      {...rest}
       rating={value}
       width='20%'
       display='flex'

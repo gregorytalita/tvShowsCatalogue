@@ -11,7 +11,7 @@ export const RatingWrapper = styled(Box)`
       return theme.palette.warning.main
     }
 
-    if (rating <= 6) {
+    if (rating < 6) {
       return theme.palette.error.main
     }
   }};

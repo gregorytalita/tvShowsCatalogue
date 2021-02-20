@@ -8,7 +8,6 @@ import { Rate } from '../'
 import ShowCardPlaceholder from './showCardPlaceholder.png'
 
 const ShowCard = ({ image, style, name, rating, onClick }) => {
-
   return (
     <animated.div style={{ ...style }}>
       <Card image={image || ShowCardPlaceholder}>

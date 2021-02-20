@@ -16,7 +16,6 @@ export const transformIntoGenresObject = (shows = []) => shows.reduce((acc = {},
       curr
     ]
   }), acc)
-
 }, {})
 
 export const removeHTML = (text = '') => text?.replace(/(<([^>]+)>)/ig, '')
