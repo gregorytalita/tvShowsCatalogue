@@ -1,5 +1,4 @@
 import React from 'react'
-import { fireEvent } from '@testing-library/react';
 import { renderWithTheme } from '../../../test/utils/renderWithTheme'
 import DetailsDrawer from './DetailsDrawer'
 

@@ -47,9 +47,9 @@ DetailsTemplate.prototype = {
 }
 
 DetailsTemplate.defaultProps = {
-  name: 'Not informed',
+  name: 'Title is not informed',
   genres: [],
-  summary: 'Not informed'
+  summary: 'Summary is not informed'
 }
 
 export default DetailsTemplate
