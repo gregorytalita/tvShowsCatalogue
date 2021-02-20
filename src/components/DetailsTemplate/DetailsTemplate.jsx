@@ -1,10 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { Box, Typography } from '@material-ui/core'
 import { GenreChips } from '../'
 import { removeHTML } from '../../core/functions'
 import { ContentWrapper } from './styles'
-
-const DetailsTemplate = ({ image, name, genres = [], summary }) => {
+import ShowCardPlaceholder from './showCardPlaceholder.png'
+const DetailsTemplate = ({ image, name, genres, summary }) => {
   return (
     <ContentWrapper
       width='50vw'
@@ -21,7 +23,9 @@ const DetailsTemplate = ({ image, name, genres = [], summary }) => {
           {name}
         </Typography>
 
-        <GenreChips genres={genres} />
+        {
+          genres.length && <GenreChips genres={genres} />
+        }
 
         <Box paddingY={2}>
           <Typography paragraph variant='body1'>
@@ -33,6 +37,20 @@ const DetailsTemplate = ({ image, name, genres = [], summary }) => {
 
     </ContentWrapper>
   )
+}
+
+DetailsTemplate.prototype = {
+  image: PropTypes.string,
+  name: PropTypes.string,
+  genres: PropTypes.array,
+  summary: PropTypes.string
+}
+
+DetailsTemplate.defaultProps = {
+  image: ShowCardPlaceholder,
+  name: 'Not informed',
+  genres: [],
+  summary: 'Not informed'
 }
 
 export default DetailsTemplate

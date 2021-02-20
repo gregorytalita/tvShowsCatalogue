@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { useSpring } from 'react-spring'
 import { useScroll } from 'react-use-gesture'
 
@@ -50,6 +51,16 @@ const MovieRow = ({ movies, label, onClickShowCard }) => {
     </>
 
   )
+}
+
+MovieRow.prototype = {
+  movies: PropTypes.array.isRequired,
+  label: PropTypes.string,
+  onClickShowCard: PropTypes.func.isRequired
+}
+
+MovieRow.defaultProps = {
+  label: 'Not Informed'
 }
 
 export default MovieRow

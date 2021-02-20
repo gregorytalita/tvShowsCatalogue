@@ -1,5 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { animated } from 'react-spring'
+
 import { Typography, Box, Hidden } from '@material-ui/core'
 import { Card, CardContent, CardActionArea } from './styles'
 import { Rate } from '../'
@@ -8,7 +10,7 @@ import ShowCardPlaceholder from './showCardPlaceholder.png'
 const ShowCard = ({ image, style, name, rating, onClick }) => {
   return (
     <animated.div style={{ ...style }}>
-      <Card background={image?.medium || ShowCardPlaceholder}>
+      <Card background={image?.medium}>
         <CardActionArea onClick={onClick}>
 
           <CardContent>
@@ -29,6 +31,21 @@ const ShowCard = ({ image, style, name, rating, onClick }) => {
       </Card>
     </animated.div>
   )
+}
+
+ShowCard.prototype = {
+  image: PropTypes.string,
+  style: PropTypes.object,
+  name: PropTypes.string,
+  rating: PropTypes.string,
+  onClick: PropTypes.func
+}
+
+ShowCard.defaultProps = {
+  image: ShowCardPlaceholder,
+  style: {},
+  name: 'Not informed',
+  onClick: () => {}
 }
 
 export default ShowCard

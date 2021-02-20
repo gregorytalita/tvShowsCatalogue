@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+
 import {
   AppBar as MuiAppBar,
   Toolbar,
@@ -16,7 +18,7 @@ import {
   LiveTv as LiveTvIcon
 } from '@material-ui/icons'
 
-const AppBar = ({ onKeyUpSearch, history, redirectRoute = '/' }) => {
+const AppBar = ({ onKeyUpSearch, history, redirectRoute }) => {
   const [search, setSearch] = useState('')
 
   const handleKeyUp = () => {
@@ -82,6 +84,16 @@ const AppBar = ({ onKeyUpSearch, history, redirectRoute = '/' }) => {
       </Toolbar>
     </MuiAppBar>
   )
+}
+
+AppBar.prototype = {
+  onKeyUpSearch: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
+  redirectRoute: PropTypes.string
+}
+
+AppBar.defaultProps = {
+  redirectRoute: '/'
 }
 
 export default AppBar
