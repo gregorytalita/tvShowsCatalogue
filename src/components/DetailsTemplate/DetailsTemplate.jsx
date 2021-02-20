@@ -31,7 +31,6 @@ const DetailsTemplate = ({ image, name, genres = [], summary }) => {
 
       </Box>
 
-
     </ContentWrapper>
   )
 }

@@ -38,12 +38,12 @@ const AppBar = ({ onKeyUpSearch, history, redirectRoute = '/' }) => {
   }
 
   const endAdornmentButton = search.length
-  ? (
-    <IconButton onClick={() => handleOnClickClear()}>
-      <ClearIcon color='secondary' />
-    </IconButton>
-  )
-  : null
+    ? (
+      <IconButton onClick={() => handleOnClickClear()}>
+        <ClearIcon color='secondary' />
+      </IconButton>
+      )
+    : null
 
   return (
     <MuiAppBar position='fixed'>

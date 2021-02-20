@@ -5,7 +5,6 @@ import { Box, Typography, Grow } from '@material-ui/core'
 import { calculateGrowTimeout } from '../../core/functions'
 
 const SearchResult = ({ location }) => {
-
   const [movieDetail, handleMovieDetails] = useState()
 
   const handleMovieClick = movieProperties => handleMovieDetails(movieProperties)
@@ -24,7 +23,7 @@ const SearchResult = ({ location }) => {
       <Box display='flex' flexWrap='wrap' justifyContent='space-around' marginY={2}>
         {
           shows.length && shows.map(({ show }, index) => (
-            <Grow in={true} timeout={calculateGrowTimeout(index)} key={show.id}>
+            <Grow in timeout={calculateGrowTimeout(index)} key={show.id}>
               <Box marginRight='8px' marginBottom={2}>
                 <ShowCard
                   onClick={() => handleMovieClick(show)}

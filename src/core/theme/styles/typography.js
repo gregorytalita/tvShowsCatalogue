@@ -1,6 +1,5 @@
 import { grey, lightBlue } from '@material-ui/core/colors'
 
-
 const typography = {
   h1: {
     fontSize: '24px',

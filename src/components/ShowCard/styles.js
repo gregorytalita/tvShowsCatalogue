@@ -36,4 +36,3 @@ export const CardContent = styled(MuiCardContent)`{
   justify-content: space-between;
   align-items: flex-end;
 }`
-

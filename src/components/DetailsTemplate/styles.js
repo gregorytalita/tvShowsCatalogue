@@ -6,7 +6,7 @@ export const ContentWrapper = styled(Box)`{
   justify-content: space-between;
 
   background: linear-gradient(to bottom, transparent, ${({ theme }) => theme.palette.common.white} 50%),
-    url(${({ backgroundImage }) => backgroundImage });
+    url(${({ backgroundImage }) => backgroundImage});
   background-size: cover;
   background-position: center;
   padding-top: 60%;

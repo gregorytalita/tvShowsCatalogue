@@ -4,7 +4,6 @@ import StarsIcon from '@material-ui/icons/Stars'
 import { RatingWrapper } from './styles'
 
 const Rate = ({ value }) => {
-
   return (
     <RatingWrapper
       rating={value}

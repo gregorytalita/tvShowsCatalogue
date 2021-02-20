@@ -22,15 +22,12 @@ const App = ({ history }) => {
   }, [])
 
   const onKeyUpSearch = search => {
-
     searchShows(search)
       .then(searchResult => {
-
         history.push({
           pathname: routes.NOT_PRIVATE.SEARCH,
           state: { search, shows: searchResult }
         })
-
       })
   }
 
