@@ -40,10 +40,11 @@ const MovieRow = ({ movies, label, onClickShowCard }) => {
         {
           movies.length && movies.map((movie, i) => (
             <ShowCard
+              {...movie}
+              image={movie.image?.medium}
               key={`${movie.id}-${i}`}
               style={style}
               onClick={() => onClickShowCard(movie)}
-              {...movie}
             />
           ))
         }

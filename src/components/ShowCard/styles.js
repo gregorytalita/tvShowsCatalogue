@@ -8,7 +8,7 @@ import {
 export const Card = styled(MuiCard)`{
   width: 320px;
   height: 200px;
-  background: url(${({ background }) => background});
+  background: url(${({ image }) => image});
   background-size: cover;
   margin-right: ${({ theme }) => `${theme.spacing(1)}px`};
 

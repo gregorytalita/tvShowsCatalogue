@@ -26,7 +26,8 @@ const Dashboard = () => {
       }
       <DetailsDrawer open={!!movieDetail} onClose={handleDetailsDrawerClose}>
         {
-          movieDetail && <DetailsTemplate {...movieDetail} />
+          movieDetail &&
+            <DetailsTemplate image={movieDetail.image?.original} {...movieDetail} />
         }
       </DetailsDrawer>
     </>

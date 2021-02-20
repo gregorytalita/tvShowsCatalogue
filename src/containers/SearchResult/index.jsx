@@ -5,10 +5,10 @@ import { Box, Typography, Grow } from '@material-ui/core'
 import { calculateGrowTimeout } from '../../core/functions'
 
 const SearchResult = ({ location }) => {
-  const [movieDetail, handleMovieDetails] = useState()
+  const [showDetail, handleShowDetails] = useState()
 
-  const handleMovieClick = movieProperties => handleMovieDetails(movieProperties)
-  const handleDetailsDrawerClose = () => handleMovieDetails()
+  const handleShowClick = showProperties => handleShowDetails(showProperties)
+  const handleDetailsDrawerClose = () => handleShowDetails()
 
   const { shows = [], search } = location.state
 
@@ -26,8 +26,9 @@ const SearchResult = ({ location }) => {
             <Grow in timeout={calculateGrowTimeout(index)} key={show.id}>
               <Box marginRight='8px' marginBottom={2}>
                 <ShowCard
-                  onClick={() => handleMovieClick(show)}
                   {...show}
+                  onClick={() => handleShowClick(show)}
+                  image={show.image?.medium}
                 />
               </Box>
             </Grow>
@@ -35,9 +36,10 @@ const SearchResult = ({ location }) => {
         }
       </Box>
 
-      <DetailsDrawer open={!!movieDetail} onClose={handleDetailsDrawerClose}>
+      <DetailsDrawer open={!!showDetail} onClose={handleDetailsDrawerClose}>
         {
-          movieDetail && <DetailsTemplate {...movieDetail} />
+          showDetail &&
+            <DetailsTemplate image={showDetail.image?.original} {...showDetail} />
         }
       </DetailsDrawer>
     </>

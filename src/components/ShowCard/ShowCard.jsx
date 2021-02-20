@@ -8,9 +8,10 @@ import { Rate } from '../'
 import ShowCardPlaceholder from './showCardPlaceholder.png'
 
 const ShowCard = ({ image, style, name, rating, onClick }) => {
+
   return (
     <animated.div style={{ ...style }}>
-      <Card background={image?.medium}>
+      <Card image={image || ShowCardPlaceholder}>
         <CardActionArea onClick={onClick}>
 
           <CardContent>
@@ -42,7 +43,6 @@ ShowCard.prototype = {
 }
 
 ShowCard.defaultProps = {
-  image: ShowCardPlaceholder,
   style: {},
   name: 'Not informed',
   onClick: () => {}

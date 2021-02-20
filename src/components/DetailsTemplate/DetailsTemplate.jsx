@@ -14,7 +14,7 @@ const DetailsTemplate = ({ image, name, genres, summary }) => {
       paddingX={6}
       paddingBottom={3}
       position='relative'
-      backgroundImage={image?.original}
+      image={image || ShowCardPlaceholder}
     >
 
       <Box my={2}>
@@ -47,7 +47,6 @@ DetailsTemplate.prototype = {
 }
 
 DetailsTemplate.defaultProps = {
-  image: ShowCardPlaceholder,
   name: 'Not informed',
   genres: [],
   summary: 'Not informed'
