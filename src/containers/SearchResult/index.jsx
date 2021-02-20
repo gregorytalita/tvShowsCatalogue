@@ -29,6 +29,7 @@ const SearchResult = ({ location }) => {
                   {...show}
                   onClick={() => handleShowClick(show)}
                   image={show.image?.medium}
+                  rating={show.rating?.average}
                 />
               </Box>
             </Grow>

@@ -24,11 +24,11 @@ const Rate = ({ value, ...rest }) => {
 }
 
 Rate.prototype = {
-  value: PropTypes.string
+  value: PropTypes.number
 }
 
 Rate.defaultProps = {
-  value: '0'
+  value: 0
 }
 
 export default Rate

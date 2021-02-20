@@ -42,6 +42,7 @@ const CardsRow = ({ shows, label, onClickShowCard }) => {
             <ShowCard
               {...show}
               image={show.image?.medium}
+              rating={show.rating?.average}
               key={`${show.id}-${i}`}
               style={style}
               onClick={() => onClickShowCard(show)}

@@ -21,7 +21,7 @@ const ShowCard = ({ image, style, name, rating, onClick }) => {
               </Typography>
 
               <Hidden smDown>
-                {rating.average && <Rate value={rating.average} />}
+                {rating && <Rate value={rating} />}
               </Hidden>
 
             </Box>
@@ -37,12 +37,13 @@ ShowCard.prototype = {
   image: PropTypes.string,
   style: PropTypes.object,
   name: PropTypes.string,
-  rating: PropTypes.string,
+  rating: PropTypes.number,
   onClick: PropTypes.func
 }
 
 ShowCard.defaultProps = {
   style: {},
+  rating: 0,
   name: 'Not informed',
   onClick: () => {}
 }
