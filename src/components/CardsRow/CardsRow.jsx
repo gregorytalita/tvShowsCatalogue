@@ -15,7 +15,7 @@ const clamp = (value, clampAt = 30) => {
   }
 }
 
-const MovieRow = ({ movies, label, onClickShowCard }) => {
+const CardsRow = ({ shows, label, onClickShowCard }) => {
   const [style, set] = useSpring(() => ({
     transform: 'perspective(500px) rotateY(0deg)'
   }))
@@ -38,13 +38,13 @@ const MovieRow = ({ movies, label, onClickShowCard }) => {
       </Box>
       <MoviesContainer {...bind()}>
         {
-          movies.length && movies.map((movie, i) => (
+          shows.length && shows.map((show, i) => (
             <ShowCard
-              {...movie}
-              image={movie.image?.medium}
-              key={`${movie.id}-${i}`}
+              {...show}
+              image={show.image?.medium}
+              key={`${show.id}-${i}`}
               style={style}
-              onClick={() => onClickShowCard(movie)}
+              onClick={() => onClickShowCard(show)}
             />
           ))
         }
@@ -54,14 +54,14 @@ const MovieRow = ({ movies, label, onClickShowCard }) => {
   )
 }
 
-MovieRow.prototype = {
-  movies: PropTypes.array.isRequired,
+CardsRow.prototype = {
+  shows: PropTypes.array.isRequired,
   label: PropTypes.string,
   onClickShowCard: PropTypes.func.isRequired
 }
 
-MovieRow.defaultProps = {
+CardsRow.defaultProps = {
   label: 'Not Informed'
 }
 
-export default MovieRow
+export default CardsRow

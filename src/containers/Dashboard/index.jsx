@@ -1,33 +1,33 @@
 import React, { useState } from 'react'
 
-import { MovieRow, DetailsDrawer, DetailsTemplate } from '../../components'
+import { CardsRow, DetailsDrawer, DetailsTemplate } from '../../components'
 import { useTVShowsContext } from '../../contexts/TVShowsContext'
 
 const Dashboard = () => {
   const { showsByGenre } = useTVShowsContext()
-  const [movieDetail, handleMovieDetails] = useState()
+  const [showDetail, handleShowDetails] = useState()
 
-  const handleMovieClick = movieProperties => handleMovieDetails(movieProperties)
+  const handleMovieClick = showProperties => handleShowDetails(showProperties)
 
-  const handleDetailsDrawerClose = () => handleMovieDetails()
+  const handleDetailsDrawerClose = () => handleShowDetails()
 
   return (
 
     <>
       {
         Object.keys(showsByGenre).sort().map(genres => (
-          <MovieRow
+          <CardsRow
             key={genres}
             label={genres}
-            movies={showsByGenre[genres].sort((a, b) => b.rating.average - a.rating.average)}
+            shows={showsByGenre[genres].sort((a, b) => b.rating.average - a.rating.average)}
             onClickShowCard={handleMovieClick}
           />
         ))
       }
-      <DetailsDrawer open={!!movieDetail} onClose={handleDetailsDrawerClose}>
+      <DetailsDrawer open={!!showDetail} onClose={handleDetailsDrawerClose}>
         {
-          movieDetail &&
-            <DetailsTemplate image={movieDetail.image?.original} {...movieDetail} />
+          showDetail &&
+            <DetailsTemplate {...showDetail} image={showDetail.image?.original} />
         }
       </DetailsDrawer>
     </>

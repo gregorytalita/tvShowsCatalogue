@@ -39,7 +39,7 @@ const SearchResult = ({ location }) => {
       <DetailsDrawer open={!!showDetail} onClose={handleDetailsDrawerClose}>
         {
           showDetail &&
-            <DetailsTemplate image={showDetail.image?.original} {...showDetail} />
+            <DetailsTemplate {...showDetail} image={showDetail.image?.original} />
         }
       </DetailsDrawer>
     </>
