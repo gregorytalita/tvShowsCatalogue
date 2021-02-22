@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# TV shows catalogue
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was developed using React.js.
+To initialize the project you first have to install the dependencies by running:
 
-## Available Scripts
+        yarn install
 
-In the project directory, you can run:
+And after that it's ready to start:
 
-### `yarn start`
+        yarn start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project structure
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The project is divided into 3 main parts: Components, Containers and Core
 
-### `yarn test`
+        ├── README.md
+        ├── package.json
+        ├── public
+        ├── src
+        │   ├── components
+        │   ├── containers
+        │   ├── contexts
+        │   ├── core
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Where on components you are able to find React components that are independent from the other
+parts of the application, making it reusable and scalable. Each component has it's unit tests
+taking into consideration different scenarios based on it's props.
+The components were developed using Material-ui library, due it's one of the biggest components library in react,
+it is maintained and has a big community and documentation it follows Material design guidelines for development.
+Another library used is styled-components, which is a "styling library". It mainly help keeping the style logic
+inside the styles instead of inserting many conditional classes on your component.
 
-### `yarn build`
+        ├── components
+        │   ├── AppBar
+        │   ├── CardsRow
+        │   ├── DetailsDrawer
+        │   ├── DetailsTemplate
+        │   ├── GenreChips
+        │   ├── Rate
+        │   ├── ShowCard
+        │   ├── Template
+        │   ├── TemplateRoute
+        │   └── index.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The containers are the pages itself, where the App is the main router ( and the only one in this case ),
+Dashboard is the initial page and SearchResult is the page that is redirected.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+        ├── containers
+        │   ├── App
+        │   ├── Dashboard
+        │   └── SearchResult
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In the core we can find things that helps us all around the application, like: api functions,
+constants, functions and theme.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+        ├── core
+        │   ├── api
+        │   ├── constants
+        │   ├── functions
+        │   └── theme
