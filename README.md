@@ -1,4 +1,4 @@
-# TV shows catalogue
+# TV shows catalogue :)
 
 This project was developed using React.js.
 To initialize the project you first have to install the dependencies by running:
